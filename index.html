@@ -76,7 +76,6 @@
             font-weight: bold; /* Font weight */
             cursor: pointer; /* Pointer cursor on hover */
             transition: background-color 0.3s ease; /* Smooth background color transition */
-            display: inline-block; /* Display as inline-block to respect padding */
         }
         .hero-buttons a.shop:hover {
             background-color: #e6000f; /* Darker background color on hover */
@@ -126,103 +125,4 @@
             <div class="admin admin">
                 <img src="https://minotar.net/avatar/BurzaWiatrowa/100.png" alt="Avatar">
                 <h3>Administrator</h3>
-                <p>BurzaWiatrowa</p>
-            </div>
-            <div class="admin mod">
-                <img src="https://minotar.net/avatar/MalyPolicjancik/100.png" alt="Avatar">
-                <h3>Moderator</h3>
-                <p>MalyPolicjancik</p>
-            </div>
-        </section>
-    <div class="notification" id="notification">SKOPIOWANO</div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector(".loader").style.display = "none";
-            initParticles();
-        });
-
-        function copyIP() {
-            const ip = 'WeakMC.space';
-            navigator.clipboard.writeText(ip).then(function() {
-                showNotification();
-            }, function() {
-                alert('Nie udało się skopiować IP');
-            });
-        }
-
-        function showNotification() {
-            const notification = document.getElementById('notification');
-            notification.classList.add('show');
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        function initParticles() {
-            const canvas = document.querySelector('.particles');
-            const ctx = canvas.getContext('2d');
-            const particles = [];
-            const colors = ['#ffffff', '#bbbbbb', '#888888'];
-
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            function Particle(x, y, radius) {
-                this.x = x;
-                this.y = y;
-                this.radius = radius;
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-                this.velocity = {
-                    x: (Math.random() - 0.5) * 0.5,
-                    y: (Math.random() - 0.5) * 0.5
-                };
-            }
-
-            Particle.prototype.draw = function() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-                ctx.closePath();
-            }
-
-            Particle.prototype.update = function() {
-                this.x += this.velocity.x;
-                this.y += this.velocity.y;
-
-                if (this.x < 0 || this.x > canvas.width) this.velocity.x = -this.velocity.x;
-                if (this.y < 0 || this.y > canvas.height) this.velocity.y = -this.velocity.y;
-
-                this.draw();
-            }
-
-            function init() {
-                particles.length = 0;
-                for (let i = 0; i < 100; i++) {
-                    const radius = Math.random() * 2;
-                    const x = Math.random() * canvas.width;
-                    const y = Math.random() * canvas.height;
-                    particles.push(new Particle(x, y, radius));
-                }
-            }
-
-            function animate() {
-                requestAnimationFrame(animate);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                particles.forEach(particle => particle.update());
-            }
-
-            init();
-            animate();
-        }
-
-        window.addEventListener('resize', () => {
-            const canvas = document.querySelector('.particles');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles();
-        });
-    </script>
-</body>
-</html>
+                <p>BurzaWiatrowa</
