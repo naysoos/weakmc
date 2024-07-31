@@ -65,6 +65,22 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .hero-buttons a.shop {
+            background-color: #FF1B07; /* Button background color */
+            color: white; /* Button text color */
+            padding: 10px 20px; /* Button padding */
+            text-decoration: none; /* Remove underline */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            font-weight: bold; /* Font weight */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+            display: inline-block; /* Display as inline-block to respect padding */
+        }
+        .hero-buttons a.shop:hover {
+            background-color: #e6000f; /* Darker background color on hover */
+        }
     </style>
 </head>
 <body>
@@ -92,7 +108,7 @@
                 <p>Najlepszy serwer minecraft</p>
                 <div class="hero-buttons">
                     <button class="copy-ip" onclick="copyIP()">Skopiuj IP</button>
-                    <button class="shop">Sklep</button>
+                    <a href="https://vishop.pl/panel/14143" class="shop">Sklep</a>
                 </div>
             </div>
             <canvas class="particles"></canvas>
